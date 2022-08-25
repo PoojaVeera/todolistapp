@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Child } from "./components/Child";
+import { FormInput } from "./components/Input";
 function App() {
+  const [task, setTask] = useState(["eat", "pray", "love"]);
+  const createToDoItem = (todo) => {
+    const newTask = [...task, { todo }];
+    setTask(newTask);
+  };
+
   return (
     <div>
-      <Child />
+      <FormInput createToDoItem={createToDoItem} />
     </div>
   );
 }
