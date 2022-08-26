@@ -6,7 +6,7 @@ export const FormInput = ({ createToDoItem }) => {
   function handleThe(e) {
     e.preventDefault();
     if (task1 === "") {
-      return console.log("please add a task");
+      return alert("no input ");
     }
     createToDoItem(task1);
     addedTask1("");
@@ -23,10 +23,6 @@ export const FormInput = ({ createToDoItem }) => {
         ></Input>
         <BUTTON1 onClick={handleThe}>add task</BUTTON1>
       </form>
-      <p>
-        THE TASKS:<br></br>
-        {task1}
-      </p>
     </div>
   );
 };
