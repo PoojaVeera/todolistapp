@@ -22,7 +22,7 @@ export const FormInput = ({ createToDoItem }) => {
           onChange={(e) => addedTask1(e.target.value)}
           value={task1}
         ></Input>
-        <BUTTON1 onClick={handleThe}>add task</BUTTON1>
+        <BUTTON1 onClick={handleThe}>Add Task</BUTTON1>
       </form>
     </div>
   );

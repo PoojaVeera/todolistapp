@@ -3,6 +3,7 @@ import "./App.css";
 import { FormInput } from "./components/Input";
 import { v4 as uuid } from "uuid";
 import { TodoListItem } from "./components/ToDoList";
+import { BUTTON2 } from "./components/Styles";
 function App() {
   const [task, setTask] = useState([
     { todo: "eat", complete: false, id: uuid },
@@ -28,22 +29,23 @@ function App() {
   };
 
   return (
-    <div>
-      <h1> ToDoList</h1>
+    <center>
+      <div>
+        <h1> ToDoList</h1>
+        <FormInput createToDoItem={createToDoItem} />
 
-      <FormInput createToDoItem={createToDoItem} />
-      <button onClick={deleteCompleted}>deleteCompleted</button>
-
-      {task.map((taskItem, id) => (
-        <TodoListItem
-          key={uuid}
-          index={id}
-          taskItem={taskItem}
-          deleteCompleted={deleteCompleted}
-          deleteTask={deleteTask}
-        />
-      ))}
-    </div>
+        {task.map((taskItem, id) => (
+          <TodoListItem
+            key={uuid}
+            index={id}
+            taskItem={taskItem}
+            deleteCompleted={deleteCompleted}
+            deleteTask={deleteTask}
+          />
+        ))}
+        <BUTTON2 onClick={deleteCompleted}>Delete Completed Tasks</BUTTON2>
+      </div>
+    </center>
   );
 }
 export default App;
