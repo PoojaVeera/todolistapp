@@ -1,11 +1,13 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
-export const TodoListItem = ({ taskItem, index, deleteToDo }) => {
+export const TodoListItem = ({ taskItem, id, deleteTask }) => {
+  console.log("data received");
+  console.log(uuid);
   return (
-    <li keys={uuid()}>
+    <li key={uuid()}>
       {taskItem.todo} &nbsp; &nbsp;
-      <button onClick={() => deleteToDo(index)}>del</button>
+      <button onClick={() => deleteTask(id)}>del</button>
     </li>
   );
 };

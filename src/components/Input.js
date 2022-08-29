@@ -10,6 +10,7 @@ export const FormInput = ({ createToDoItem }) => {
     }
     createToDoItem(task1);
     addedTask1("");
+    console.log("add task done");
   }
 
   return (
